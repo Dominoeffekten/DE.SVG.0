@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <title>svg</title>
+        <style>
+            p{
+                font-family: sans-serif;
+                line-height: 24px;
+                font-size: 16px;
+            }
+            section{
+                width: 58%;
+                margin: 0 auto;
+            }
+            .svg {
+                width: 400px;
+                height: 200px;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+    <section>
+        <h1>SVG</h1>
+        <svg xmlns='http://www.w3.org/2000/svg' viewbox='0 0 400 200' class='svg'>
+             <!-- circle -->
+            <circle cx='200' cy='100' r='10' fill='yellow'/>
+            <!-- ellipsis, circle with two radii -->
+            <ellipse cx='200' cy='100' rx='190'  ry='90' stroke='blue' 
+            fill='transparent' stroke-width='2'/>
+        </svg>
+        <h2>Hvad er en viewbox?</h2>
+        <p>En viewbox definere hvor henne på skærmen der skal tegnes, samt hvilken størrelsen/dimension den skal have.
+            De forskellige parameter er: min-x, min-y, width og height. <br>
+            Viewboxe er en måde at zoom på sit lærred. Ved at benytte sig at viewbox kan man vælge
+            at se det hele og zoome ind (Gøre det større end størrelsen i style), eller zoome ud, så man ser mindre
+            (gøre den mindre end størrelsen i style). <br>
+            De 2 første elementer i viewbox kaldes 'pan'. Her kan man definere den horsontiale position (x) og den verticale position (y).
+        </p>
+        <div>
+        <svg width="200" height="100" style="background-color:black;" viewbox='0 0 400 200'>
+            <!-- circle -->
+           <circle cx='200' cy='100' r='10' fill='yellow'/>
+           <!-- ellipsis, circle with two radii -->
+           <ellipse cx='200' cy='100' rx='190'  ry='90' stroke='blue' 
+           fill='transparent' stroke-width='2'/>
+       </svg>
+       <p><i>Vievbox er halveret</i></p>
+        </div>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox">MDN: viewBox</a> <br>
+        <a href="https://webdesign.tutsplus.com/tutorials/svg-viewport-and-viewbox-for-beginners--cms-30844">SVG viewport and viewBox</a>
+
+        <h2>Hvad er viewport?</h2>
+        <p>
+            Viewport er det område som brugeren kan se på en side. Den er afhængig af, hvilken enhede man benytter sig af. <br>
+            Viewporten skal skrive inde i et meta tag, hvor man kan fortælle, hvordan
+            browseren skal behandle de forskellige elementer, når de bliver skalleret ned <br>
+            Ved at definere viewporten i forhold til SVG kan man bestemme, hvor meget der skal ses, dog kan der være flere elementer bagved. 
+            Man ændre viewportens størrelse i style ved width og height.
+        </p>
+        <div>
+                <svg class="svg" style="background-color:black;" viewbox='0 0 200 100'>
+                    <!-- circle -->
+                   <circle cx='200' cy='100' r='10' fill='yellow'/>
+                   <!-- ellipsis, circle with two radii -->
+                   <ellipse cx='200' cy='100' rx='190'  ry='90' stroke='blue' 
+                   fill='transparent' stroke-width='2'/>
+               </svg>
+               <p><i>Viewport er halveret</i></p>
+                </div>
+        <a href="https://www.w3schools.com/css/css_rwd_viewport.asp">W3school: What is the Viewport?</a> <br>
+        <a href="https://webdesign.tutsplus.com/tutorials/svg-viewport-and-viewbox-for-beginners--cms-30844">SVG viewport and viewBox</a>
+        
+        <h2>Hvordan er de relaterede til hinanden?</h2>
+        <p>
+            Når man benytter sig af viewbox skal man huske at sætte end viewport også. Ellers vil den hele tiden være på 100%, og det vil give en meget stor tegning. <br>
+            Hvis man ændre viewboxen zoomer man ind og ud, men størrelsen på selve lærredet vil ikke ændre sig. <br>
+            Ændre man derimod viewporten vil størrelsen på lærredet ændre sig og elementerne vil virke mindre, da de vil have den samme størrelse.
+        </p>
+        
+        <a href="https://webdesign.tutsplus.com/tutorials/svg-viewport-and-viewbox-for-beginners--cms-30844">SVG viewport and viewBox</a>
+
+        
+        <h2>Hvordan skalere man en SVG tegning på en hjemmeside?</h2>
+        <p>
+            Hvis man vil ændre størrelsen på lærredet skal man ændre dens viewbox, men hvor man vil ændre elementernes størrelse
+            skal man ændre på dens viewport
+        </p>
+        <a href="https://webdesign.tutsplus.com/tutorials/svg-viewport-and-viewbox-for-beginners--cms-30844">SVG viewport and viewBox</a>
+
+
+    </section>
+    </body>
+</html>
